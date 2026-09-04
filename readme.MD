@@ -52,7 +52,7 @@ y_2(x) &= P_2[(1+\gamma_1)P_1(x) - \gamma_1 x]
 where $y_1$ and $y_2$ are called estimates.
 Once a fixed point has been reached,
 
-$$\Large x^{*} = x^{*} + \beta D(x^{*})$$
+$$\Large x^{\ast} = x^{\ast} + \beta D(x^{\ast})$$
 
 and this implies the two estimates are equal with a solution;
 
