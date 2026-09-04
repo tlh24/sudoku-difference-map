@@ -15,9 +15,12 @@ Notes:
 <img src="images/frames.gif" width="520"> 
   - In comparison, CaDiCaL solves **all** 422784 puzzles in 35 sec on my semi-old workstation.  Never gets stuck.  ~10x faster than the GPU-accelerated version. 
 
+# How it works
+
+Gif of the algorithm succeeding: 
+
 <img src="images/sudoku_dm.gif" width="400">
 
-# How it works
 ## Alternating Projections
 <img src="images/cvx-er.gif" width="520">
 
