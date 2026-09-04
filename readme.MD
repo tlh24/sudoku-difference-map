@@ -15,15 +15,15 @@ to solve one of the predefined puzzles.  The puzzle will be solved and images of
 
 Projections onto convex sets (POCS) is a useful method for finding the intersection between convex sets.  A simple example is shown below, where we have two convex constraint sets $C_1$ (red) and $C_2$ (blue).  The intersection is found by simply projecting onto each set consecutively via the iterated map:
 
-$$x_{n+1} = P_2(P_1(x_n))$$
+$$\Large x_{n+1} = P_2(P_1(x_n))$$
 
 where $P$ are the projections onto their respective sets.  Projections are idempotent $PP = P$ and are distance minimizing;
 
-$P(x) = y \in C$ such that $\parallel x - y \parallel$  is minimized.
+$$\Large P(x) = y \in C \text{ such that } \parallel x - y \parallel \text{ is minimized.}$$
 
 The solution is found when
 
-$$x \in C_1 \cap C_2$$
+$$\Large x \in C_1 \cap C_2$$
 
 The convexivity of the constraints sets allows lots of general conclusions to be drawn, even if there is little knowledge about the individual sets.  Unfortunately, when the constraint sets are non-convex, very few general results hold. Consequently, rather than finding the global solution, using simple alternating projections can result in stagnation at local minima.  An example of this is shown below, where the sets from the previous example are made to be non-convex, and the ability to find the intersection (global minima) is now highly dependent on the initial guess.
 
@@ -38,13 +38,13 @@ As I will discuss in the next section, to get projection methods to work with no
 
 One of the most successful non-convex projection algorithms is the difference map (DM).  It is written as
 
-$$x_{n+1} = x_n + \beta D(x_n)$$
+$$\Large x_{n+1} = x_n + \beta D(x_n)$$
 
 where
 
-$$D(x) = y_1(x) - y_2(x),$$
+$$\Large D(x) = y_1(x) - y_2(x),$$
 
-$$\begin{aligned}
+$$\Large \begin{aligned}
 y_1(x) &= P_1[(1+\gamma_2)P_2(x) - \gamma_2 x], \\
 y_2(x) &= P_2[(1+\gamma_1)P_1(x) - \gamma_1 x]
 \end{aligned}$$
@@ -52,16 +52,16 @@ y_2(x) &= P_2[(1+\gamma_1)P_1(x) - \gamma_1 x]
 where $y_1$ and $y_2$ are called estimates.
 Once a fixed point has been reached,
 
-$$x^{*} = x^{*} + \beta D(x^{*})$$
+$$\Large x^{*} = x^{*} + \beta D(x^{*})$$
 
 and this implies the two estimates are equal with a solution;
 
-$$x_{sol} = y_1 = y_2$$
+$$\Large x_{sol} = y_1 = y_2$$
 
 
 Rather than the form outlined above, a simpler version of the difference map is often used and is given by;
 
-$$D(x_n) = P_1[(2P_2(x_n)-x_n)] - P_2(x_n)$$
+$$\Large D(x_n) = P_1[(2P_2(x_n)-x_n)] - P_2(x_n)$$
 
 This simpler version generally performs well and reduces the number of projections required per iteration.
 
